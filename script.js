@@ -8,9 +8,8 @@
 /* The big day.  NOTE: in JavaScript months start at 0,
    so May is 4 (Jan=0, Feb=1 ... May=4).
    Format: new Date(year, month, day, hour, minute)
-   The time below (12:00 noon) is a placeholder — change it
-   to the ceremony time whenever you know it. */
-const weddingDate = new Date(2027, 4, 19, 12, 0, 0);
+   The time below is 13:00 (1pm) — the ceremony start time. */
+const weddingDate = new Date(2027, 4, 19, 13, 0, 0);
 
 /* Grab the four number slots from the page by their id */
 const daysEl = document.getElementById("days");
