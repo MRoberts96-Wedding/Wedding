@@ -1,0 +1,69 @@
+/* ============================================================
+   Our wedding palette — inspired by the save-the-dates
+   (kraft brown paper on a deep green envelope) + spring pastels
+   ============================================================ */
+:root {
+  --green: #2f4a3a;   /* deep envelope green — used for headings */
+  --kraft: #c19a6b;   /* kraft-paper brown — accents & dividers  */
+  --cream: #f7f3ec;   /* warm off-white — the page background    */
+  --ink:   #3a3a34;   /* soft near-black — normal text           */
+  --blush: #e9d5cf;   /* soft spring-pastel — gentle accent      */
+}
+
+/* Make width calculations include padding & borders (saves headaches) */
+* { box-sizing: border-box; }
+
+/* ---- The page as a whole ---- */
+body {
+  margin: 0;
+  background-color: var(--cream);
+  color: var(--ink);
+  font-family: -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ---- The centred hero block (the whole homepage, for now) ---- */
+.hero {
+  min-height: 100vh;          /* fill the full height of the screen */
+  display: flex;              /* flexbox: lets us centre things easily */
+  flex-direction: column;     /* stack items top-to-bottom */
+  align-items: center;        /* centre left-to-right */
+  justify-content: center;    /* centre top-to-bottom */
+  text-align: center;
+  padding: 2rem;
+}
+
+/* ---- The couple's names (big heading) ---- */
+.hero h1 {
+  font-family: "Cormorant Garamond", Georgia, serif;  /* elegant serif */
+  font-weight: 600;
+  color: var(--green);
+  font-size: clamp(2.5rem, 8vw, 5rem);  /* grows/shrinks with screen size */
+  margin: 0 0 1rem;
+  letter-spacing: 0.5px;
+}
+
+/* ---- "We're getting married" line ---- */
+.hero .tagline {
+  font-size: 1rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;   /* small caps-style spacing */
+  color: var(--kraft);
+  margin: 0 0 1.5rem;
+}
+
+/* ---- A little kraft-brown divider line ---- */
+.divider {
+  width: 60px;
+  height: 2px;
+  background-color: var(--kraft);
+  border: none;
+  margin: 0 0 1.5rem;
+}
+
+/* ---- Date & venue ---- */
+.hero .details {
+  font-size: 1.15rem;
+  margin: 0;
+}
