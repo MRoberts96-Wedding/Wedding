@@ -36,6 +36,10 @@ A **wedding website** built as a **learning project** for Matthew (beginner code
 ## Key facts
 - Couple: **Matthew & Jacqueline**. Big day: **Wed 19 May 2027**, Hadsham Farm, Banbury.
 
+## Conventions
+- **Cache-busting**: `index.html` links assets with a version query — currently `style.css?v=2` and `script.js?v=1`. **Bump the number whenever that file is edited** so browsers fetch fresh copies.
+- **Responsive helpers** (in style.css): `class="only-desktop"` shows on computers only; `class="only-mobile"` shows on phones only. Breakpoint is `max-width: 600px`; mobile rule uses `display: revert`. Reuse these instead of one-off show/hide classes.
+
 ## Status
 - LIVE and styled with a working countdown.
 - **Next:** add sections/tabs — Our Story, Venue & Directions, Schedule, RSVP (planned for the next day).
