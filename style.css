@@ -105,3 +105,17 @@ body {
   font-size: 2rem;
   color: var(--green);
 }
+
+/* ============================================================
+   Responsive tweaks — different looks for phones vs computers
+   ============================================================ */
+
+/* By default (computers) we hide the mobile version */
+.details-mobile { display: none; }
+
+/* A "media query": everything inside here only applies when the
+   screen is 600px wide or narrower — i.e. phones. */
+@media (max-width: 600px) {
+  .details-desktop { display: none; }   /* hide the one-line version */
+  .details-mobile  { display: inline; } /* show the two-line dotted version */
+}

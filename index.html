@@ -21,7 +21,12 @@
       <h1>Matthew &amp; Jacqueline</h1>
       <p class="tagline">We're getting married</p>
       <hr class="divider" />
-      <p class="details">Wednesday, 19th May 2027 &middot; Hadsham Farm, Banbury</p>
+      <p class="details">
+        <!-- Shown on larger screens (laptops/desktops) -->
+        <span class="details-desktop">Wednesday, 19th May 2027 &middot; Hadsham Farm, Banbury</span>
+        <!-- Shown on phones: two lines, dots instead of commas -->
+        <span class="details-mobile">Wednesday &middot; 19th May 2027<br />Hadsham Farm &middot; Banbury</span>
+      </p>
 
       <!-- Countdown timer — the numbers are filled in by script.js -->
       <div class="countdown" id="countdown">
