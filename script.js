@@ -1,0 +1,52 @@
+/* ============================================================
+   Countdown to the big day
+   ------------------------------------------------------------
+   This runs in the visitor's browser. Every second it works out
+   how long is left until the wedding and updates the numbers.
+   ============================================================ */
+
+/* The big day.  NOTE: in JavaScript months start at 0,
+   so May is 4 (Jan=0, Feb=1 ... May=4).
+   Format: new Date(year, month, day, hour, minute)
+   The time below (12:00 noon) is a placeholder — change it
+   to the ceremony time whenever you know it. */
+const weddingDate = new Date(2027, 4, 19, 12, 0, 0);
+
+/* Grab the four number slots from the page by their id */
+const daysEl = document.getElementById("days");
+const hoursEl = document.getElementById("hours");
+const minutesEl = document.getElementById("minutes");
+const secondsEl = document.getElementById("seconds");
+
+/* Adds a leading zero so 7 shows as "07" */
+function pad(number) {
+  return String(number).padStart(2, "0");
+}
+
+function updateCountdown() {
+  const now = new Date();
+  const msLeft = weddingDate - now; // milliseconds remaining
+
+  /* If the day has arrived, celebrate instead of counting */
+  if (msLeft <= 0) {
+    document.getElementById("countdown").innerHTML =
+      "<p class='big-day'>It's the big day! 🎉</p>";
+    return;
+  }
+
+  /* Turn milliseconds into days / hours / minutes / seconds */
+  const totalSeconds = Math.floor(msLeft / 1000);
+  const days = Math.floor(totalSeconds / 86400);
+  const hours = Math.floor((totalSeconds % 86400) / 3600);
+  const minutes = Math.floor((totalSeconds % 3600) / 60);
+  const seconds = totalSeconds % 60;
+
+  /* Write the numbers back into the page */
+  daysEl.textContent = days;
+  hoursEl.textContent = pad(hours);
+  minutesEl.textContent = pad(minutes);
+  secondsEl.textContent = pad(seconds);
+}
+
+updateCountdown();              // run once immediately...
+setInterval(updateCountdown, 1000);  // ...then again every second

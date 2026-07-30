@@ -67,3 +67,41 @@ body {
   font-size: 1.15rem;
   margin: 0;
 }
+
+/* ---- Countdown timer ---- */
+.countdown {
+  display: flex;              /* the four boxes sit in a row */
+  gap: 1.25rem;
+  margin-top: 2.5rem;
+  flex-wrap: wrap;            /* wrap onto a new line on small screens */
+  justify-content: center;
+}
+
+.count-box {
+  display: flex;
+  flex-direction: column;    /* number on top, label underneath */
+  align-items: center;
+  min-width: 64px;
+}
+
+.count-number {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(2rem, 6vw, 3rem);
+  font-weight: 600;
+  color: var(--green);
+  line-height: 1;
+}
+
+.count-label {
+  font-size: 0.7rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--kraft);
+  margin-top: 0.4rem;
+}
+
+.big-day {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 2rem;
+  color: var(--green);
+}
