@@ -107,15 +107,16 @@ body {
 }
 
 /* ============================================================
-   Responsive tweaks — different looks for phones vs computers
+   Responsive helpers — reuse these anywhere!
+   - add class="only-desktop" to show something on computers only
+   - add class="only-mobile"  to show something on phones only
    ============================================================ */
 
-/* By default (computers) we hide the mobile version */
-.details-mobile { display: none; }
+/* On computers (the default), hide anything marked mobile-only */
+.only-mobile { display: none; }
 
-/* A "media query": everything inside here only applies when the
-   screen is 600px wide or narrower — i.e. phones. */
+/* On phones (screen 600px wide or narrower): */
 @media (max-width: 600px) {
-  .details-desktop { display: none; }   /* hide the one-line version */
-  .details-mobile  { display: inline; } /* show the two-line dotted version */
+  .only-desktop { display: none; }    /* hide desktop-only things */
+  .only-mobile  { display: revert; }  /* show mobile-only things (back to normal) */
 }

@@ -13,8 +13,9 @@
       rel="stylesheet"
     />
 
-    <!-- Link our own stylesheet (the looks live in style.css) -->
-    <link rel="stylesheet" href="style.css" />
+    <!-- Link our own stylesheet. The "?v=2" forces browsers to fetch a
+         fresh copy after we make changes — bump the number when we edit CSS. -->
+    <link rel="stylesheet" href="style.css?v=2" />
   </head>
   <body>
     <main class="hero">
@@ -23,9 +24,9 @@
       <hr class="divider" />
       <p class="details">
         <!-- Shown on larger screens (laptops/desktops) -->
-        <span class="details-desktop">Wednesday, 19th May 2027 &middot; Hadsham Farm, Banbury</span>
+        <span class="only-desktop">Wednesday, 19th May 2027 &middot; Hadsham Farm, Banbury</span>
         <!-- Shown on phones: two lines, dots instead of commas -->
-        <span class="details-mobile">Wednesday &middot; 19th May 2027<br />Hadsham Farm &middot; Banbury</span>
+        <span class="only-mobile">Wednesday &middot; 19th May 2027<br />Hadsham Farm &middot; Banbury</span>
       </p>
 
       <!-- Countdown timer — the numbers are filled in by script.js -->
