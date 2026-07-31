@@ -23,7 +23,7 @@ A **wedding website** built as a **learning project** for Matthew (beginner code
 - Windows: CRLF/LF warnings on commit are harmless.
 
 ## Files
-- `index.html` — single scrolling page. Sticky `<nav class="site-nav">` menu (anchor links) → `<main class="hero" id="home">` (names, `.tagline`, `.divider`, `.details`, countdown), then five `<section class="section">` shells: `#story`, `#venue`, `#accommodation`, `#schedule`, `#rsvp` (alternating `.section--alt` white bg — the alternation is maintained by hand, so inserting a section may mean flipping the `--alt` on the ones after it). Later sections are placeholder stubs, being filled one at a time.
+- `index.html` — single scrolling page. Sticky `<nav class="site-nav">` menu (anchor links) → `<main class="hero" id="home">` (names, `.tagline`, `.divider`, `.details`, countdown), then five `<section class="section">` shells: `#story`, `#venue`, `#accommodation`, `#schedule`, `#rsvp`. Backgrounds are set **deliberately per section** (not a strict alternation): `#story` cream, `#venue` white + Hadsham watermark, `#accommodation` white, `#schedule` cream, `#rsvp` white (`.section--alt` = white). Later sections are placeholder stubs, being filled one at a time.
 - `style.css` — palette in `:root` CSS variables; flexbox-centered `.hero`; Cormorant Garamond (Google Fonts) for headings, system sans for body.
 - `script.js` — (1) password gate + Terms overlay logic, (2) countdown to the wedding date, updates every second. **Password is set at the top of this file** in `const PASSWORD` — NOT real security (client-side only, visible in View Source); it's just a casual "guests only" gate.
 - `CNAME` — custom domain (do not remove).
