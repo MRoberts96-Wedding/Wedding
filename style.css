@@ -375,13 +375,18 @@ html { scroll-behavior: smooth; }
 
 .stay-name a:hover { text-decoration: underline; }
 
+/* The photo is a link too — keep it block-level & centred, carrying the gap */
+.stay-photo {
+  display: block;
+  margin-bottom: 0.75rem;
+}
+
 .stay-card img {
   width: 100%;
   max-width: 220px;
   aspect-ratio: 4 / 3;
   object-fit: cover;           /* uniform card shape (hotel photos, no faces to crop) */
   border-radius: 8px;
-  margin-bottom: 0.75rem;
 }
 
 .stay-time {
