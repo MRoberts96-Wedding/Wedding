@@ -187,17 +187,20 @@ html { scroll-behavior: smooth; }
   padding: 0;
 }
 
-/* The vertical line running down the MIDDLE */
-.timeline::before {
+/* The centre line is drawn as a segment under EACH event except the last,
+   so the line naturally STOPS at the final heart instead of running past it.
+   Each segment runs from this event's dot down to the next event's dot. */
+.timeline-item:not(:last-child)::after {
   content: "";
   position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  top: 6px;
-  bottom: 6px;
+  top: 15px;                 /* centre of this event's dot */
+  height: 100%;              /* reaches down to the next event's dot */
   width: 2px;
   background-color: var(--kraft);
+  z-index: 0;                /* sits behind the dots/heart */
 }
+.timeline-item:nth-child(odd):not(:last-child)::after  { right: -1px; }  /* on the centre line */
+.timeline-item:nth-child(even):not(:last-child)::after { left: -1px; }
 
 /* Each event takes half the width and sits on one side of the line */
 .timeline-item {
@@ -234,6 +237,19 @@ html { scroll-behavior: smooth; }
 
 .timeline-item:nth-child(odd)::before  { right: -9px; }  /* half the dot width */
 .timeline-item:nth-child(even)::before { left: -9px; }
+
+/* The final (2027) marker is a heart instead of a dot — same size, on the line.
+   It reuses the dot's box & left/right position, just restyled as a ♥ glyph. */
+.timeline-item:last-child::before {
+  content: "\2665";          /* ♥ */
+  background: none;
+  border: none;
+  border-radius: 0;
+  color: var(--green);
+  font-size: 22px;
+  line-height: 18px;         /* keep the box ~ the same height as the 18px dot */
+  text-align: center;
+}
 
 .timeline-year {
   display: block;
@@ -280,7 +296,12 @@ html { scroll-behavior: smooth; }
 
 /* ---- On phones: collapse to one column with the line on the left ---- */
 @media (max-width: 600px) {
-  .timeline::before { left: 8px; transform: none; }
+  .timeline-item:not(:last-child)::after,
+  .timeline-item:nth-child(odd):not(:last-child)::after,
+  .timeline-item:nth-child(even):not(:last-child)::after {
+    left: 8px;
+    right: auto;
+  }
 
   .timeline-item,
   .timeline-item:nth-child(odd),
