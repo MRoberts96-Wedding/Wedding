@@ -365,7 +365,15 @@ html { scroll-behavior: smooth; }
   font-family: "Cormorant Garamond", Georgia, serif;
   font-size: 1.3rem;
   font-weight: 600;
+  line-height: 1.25;
   margin: 0 0 0.75rem;
+  /* Reserve two lines of height so cards whose name wraps keep their photo
+     aligned with the single-line ones */
+  min-height: 2.5em;
+  display: flex;
+  align-items: center;         /* centre the name within its reserved space */
+  justify-content: center;
+  width: 100%;                 /* full width so names wrap like before, not early */
 }
 
 .stay-name a {
