@@ -328,6 +328,71 @@ html { scroll-behavior: smooth; }
 }
 
 /* ============================================================
+   Accommodation cards (local stays)
+   ============================================================ */
+.stay-cards {
+  max-width: 920px;
+  margin: 2rem auto 0;
+  padding: 0 2rem;
+  display: grid;
+  /* fit as many ~190px cards per row as will comfortably go, then wrap */
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 1.5rem;
+}
+
+/* A cream card with green text that looks like it's sitting on the page */
+.stay-card {
+  background-color: var(--cream);
+  color: var(--green);
+  border-radius: 10px;
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;         /* centre everything horizontally */
+  justify-content: center;     /* ...and vertically */
+  text-align: center;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);   /* the little 3D "lift" */
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+/* Lift a little more when hovered — feels interactive */
+.stay-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.16);
+}
+
+.stay-name {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin: 0 0 0.75rem;
+}
+
+.stay-name a {
+  color: var(--green);
+  text-decoration: none;
+}
+
+.stay-name a:hover { text-decoration: underline; }
+
+.stay-card img {
+  width: 100%;
+  max-width: 220px;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;           /* uniform card shape (hotel photos, no faces to crop) */
+  border-radius: 8px;
+  margin-bottom: 0.75rem;
+}
+
+.stay-time {
+  margin: 0;
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--green);
+}
+
+/* ============================================================
    Venue & Directions section
    ============================================================ */
 .venue-name {
