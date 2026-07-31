@@ -353,6 +353,26 @@ html { scroll-behavior: smooth; }
 
 .venue-map-link:hover { background-color: #263c2f; }
 
+/* Faint tipi/lake illustration (from the save-the-date) behind the venue.
+   Drawn on a ::before so we can fade it with opacity while keeping the
+   text fully readable on top. */
+#venue { position: relative; overflow: hidden; }
+
+#venue::before {
+  content: "";
+  position: absolute;
+  inset: 0;                    /* fill the whole section */
+  background-image: url("images/venue-illustration.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  opacity: 0.15;               /* very faint watermark */
+  pointer-events: none;        /* let clicks reach the content */
+}
+
+/* Keep the venue text above the watermark */
+#venue .section-inner { position: relative; z-index: 1; }
+
 /* ============================================================
    Password gate + Terms & Conditions overlay
    ============================================================ */
