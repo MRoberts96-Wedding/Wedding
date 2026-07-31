@@ -328,6 +328,32 @@ html { scroll-behavior: smooth; }
 }
 
 /* ============================================================
+   Venue & Directions section
+   ============================================================ */
+.venue-name {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 1.6rem;
+  color: var(--green);
+  margin: 0 0 0.25rem;
+}
+
+.venue-address { margin: 0 0 1.5rem; }
+
+/* Green "Open in Google Maps" button */
+.venue-map-link {
+  display: inline-block;
+  padding: 0.6rem 1.4rem;
+  background-color: var(--green);
+  color: var(--cream);
+  text-decoration: none;
+  border-radius: 6px;
+  letter-spacing: 1px;
+  font-size: 0.9rem;
+}
+
+.venue-map-link:hover { background-color: #263c2f; }
+
+/* ============================================================
    Password gate + Terms & Conditions overlay
    ============================================================ */
 
