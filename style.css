@@ -247,15 +247,25 @@ html { scroll-behavior: smooth; }
 
 .timeline-text { margin: 0 0 1rem; }
 
-/* Photos on the timeline — sized to a column, hugging the centre line */
+/* Photos on the timeline — shown in FULL (no cropping) so no faces get
+   cut off; portraits and landscapes simply take their natural shape */
 .timeline-item img {
   display: block;
   width: 100%;
-  max-width: 240px;
-  aspect-ratio: 4 / 3;
-  object-fit: cover;           /* fills the box without stretching */
+  max-width: 260px;
+  height: auto;                /* keep the photo's real proportions */
   border-radius: 8px;
   margin-top: 0.5rem;
+}
+
+/* Small location label under the year on the holiday photos */
+.timeline-place {
+  display: block;
+  color: var(--kraft);
+  font-size: 0.85rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 0.25rem;
 }
 
 .timeline-item:nth-child(odd) img  { margin-left: auto; }   /* push right, toward the line */
