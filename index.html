@@ -15,7 +15,7 @@
 
     <!-- Link our own stylesheet. The "?v=2" forces browsers to fetch a
          fresh copy after we make changes — bump the number when we edit CSS. -->
-    <link rel="stylesheet" href="style.css?v=7" />
+    <link rel="stylesheet" href="style.css?v=8" />
   </head>
   <body>
     <!-- ============ Password gate ============
@@ -114,34 +114,60 @@
           snapshots from our adventures along the way.
         </p>
 
-        <!-- A few smaller photos from our travels (no captions needed) -->
-        <div class="trip-gallery">
-          <img src="images/2017-paris.jpg" alt="Paris, New Year's Eve 2017" />
-          <img src="images/2018-thailand.jpg" alt="Thailand, 2018" />
-          <img src="images/2019-iceland.jpg" alt="Iceland, 2019" />
-          <img src="images/2023-cambodia.jpg" alt="Cambodia, 2023" />
-        </div>
-
-        <!-- Vertical timeline: oldest at the top, most recent at the bottom.
-             TO ADD A PHOTO LATER: put the image file in an "images" folder,
-             then replace a <div class="timeline-photo">…</div> line with:
-             <img src="images/your-photo.jpg" alt="A short description"> -->
+        <!-- Vertical timeline: a centre line with events alternating left and
+             right, oldest at the top → most recent at the bottom. Holiday photos
+             sit at their own year with no caption. -->
         <ol class="timeline">
           <li class="timeline-item">
             <span class="timeline-year">2008</span>
             <p class="timeline-text">
-              Matt first laid eyes on Jacqueline in the Princes Risborough Costa.
+              Matt first laid eyes on Jacqueline in Princes Risborough Costa.
               Sadly, she was seeing a certain Jack Dobson at the time — better
               known to us all as the Best Man.
             </p>
           </li>
 
           <li class="timeline-item">
+            <span class="timeline-year">2014</span>
+            <p class="timeline-text">
+              Jacqueline saw Matt stacking shelves in M&amp;S and immediately knew
+              he was the one.
+            </p>
+          </li>
+
+          <li class="timeline-item">
             <span class="timeline-year">2017</span>
             <p class="timeline-text">
-              We met properly at a house party and started dating on 6th May.
+              We properly met at Hayley Beale's house party and started dating on the 6th May.
             </p>
             <img src="images/2017-meet.jpg" alt="Matthew and Jacqueline together" />
+          </li>
+
+          <li class="timeline-item timeline-item--photo">
+            <span class="timeline-year">2017</span>
+            <img src="images/2017-paris.jpg" alt="Paris, New Year's Eve 2017" />
+          </li>
+
+          <li class="timeline-item timeline-item--photo">
+            <span class="timeline-year">2018</span>
+            <img src="images/2018-thailand.jpg" alt="Thailand, 2018" />
+          </li>
+
+          <li class="timeline-item timeline-item--photo">
+            <span class="timeline-year">2019</span>
+            <img src="images/2019-iceland.jpg" alt="Iceland, 2019" />
+          </li>
+
+          <li class="timeline-item">
+            <span class="timeline-year">2023</span>
+            <p class="timeline-text">
+              We flew the nest and moved into our first flat together.
+            </p>
+          </li>
+
+          <li class="timeline-item timeline-item--photo">
+            <span class="timeline-year">2023</span>
+            <img src="images/2023-cambodia.jpg" alt="Cambodia, 2023" />
           </li>
 
           <li class="timeline-item">
@@ -150,6 +176,13 @@
               We <em>finally</em> got engaged at Boringdon Hall on 15th September.
             </p>
             <img src="images/2024-engagement.jpg" alt="Our engagement at Boringdon Hall" />
+          </li>
+
+          <li class="timeline-item">
+            <span class="timeline-year">2025</span>
+            <p class="timeline-text">
+              We bought our first home together on 1st August.
+            </p>
           </li>
 
           <li class="timeline-item">
@@ -165,9 +198,9 @@
             <span class="timeline-year">2027</span>
             <p class="timeline-text">
               We officially tie the knot on 6th May — our 10-year anniversary.
-              Then on 19th May we celebrate with all of you at Hadsham Farm,
-              sharing our vows and the start of our next chapter, surrounded by
-              our favourite people.
+              Then on the 19th May we will welcome you to Hadsham Farm,
+              sharing our vows and celebrating the start of our next chapter, 
+              surrounded by our favourite people.
             </p>
           </li>
         </ol>

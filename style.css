@@ -176,47 +176,64 @@ html { scroll-behavior: smooth; }
 }
 
 /* ============================================================
-   Our Story timeline (vertical: oldest at top → newest at bottom)
+   Our Story timeline — centre line, events alternating left/right
+   (oldest at top → most recent at bottom)
    ============================================================ */
 .timeline {
   list-style: none;            /* no default number bullets */
-  position: relative;          /* anchor for the vertical line */
-  max-width: 620px;
+  position: relative;          /* anchor for the centre line */
+  max-width: 700px;
   margin: 0 auto;
   padding: 0;
-  text-align: left;            /* override the section's centre alignment */
 }
 
-/* The vertical line running down the left edge */
+/* The vertical line running down the MIDDLE */
 .timeline::before {
   content: "";
   position: absolute;
-  left: 8px;
+  left: 50%;
+  transform: translateX(-50%);
   top: 6px;
   bottom: 6px;
   width: 2px;
   background-color: var(--kraft);
 }
 
+/* Each event takes half the width and sits on one side of the line */
 .timeline-item {
   position: relative;
-  padding: 0 0 2.5rem 2.5rem;  /* gap below + room for the line & dot */
+  width: 50%;
+  padding: 0 2.5rem 2.5rem;    /* space around content + gap from the line */
 }
 
-.timeline-item:last-child { padding-bottom: 0; }
+/* Odd events on the LEFT, text hugging the centre line */
+.timeline-item:nth-child(odd) {
+  left: 0;
+  text-align: right;
+}
 
-/* The dot marking each stage on the line */
+/* Even events on the RIGHT, text hugging the centre line */
+.timeline-item:nth-child(even) {
+  left: 50%;
+  text-align: left;
+}
+
+/* The dot marking each event, sitting on the centre line */
 .timeline-item::before {
   content: "";
   position: absolute;
-  left: 0;
   top: 6px;
   width: 18px;
   height: 18px;
+  box-sizing: border-box;
   border-radius: 50%;
   background-color: var(--green);
   border: 3px solid var(--cream);   /* little gap between dot and line */
+  z-index: 1;
 }
+
+.timeline-item:nth-child(odd)::before  { right: -9px; }  /* half the dot width */
+.timeline-item:nth-child(even)::before { left: -9px; }
 
 .timeline-year {
   display: block;
@@ -230,54 +247,53 @@ html { scroll-behavior: smooth; }
 
 .timeline-text { margin: 0 0 1rem; }
 
-/* Dashed placeholder box, shown until you drop a real photo in */
-.timeline-photo {
-  width: 100%;
-  max-width: 320px;
-  aspect-ratio: 4 / 3;         /* keeps a tidy shape before there's an image */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: 2px dashed var(--kraft);
-  border-radius: 8px;
-  color: var(--kraft);
-  font-size: 0.8rem;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-}
-
-/* When you swap the box for a real <img>, this shapes it neatly */
+/* Photos on the timeline — sized to a column, hugging the centre line */
 .timeline-item img {
   display: block;
   width: 100%;
-  max-width: 320px;
+  max-width: 240px;
   aspect-ratio: 4 / 3;
   object-fit: cover;           /* fills the box without stretching */
   border-radius: 8px;
+  margin-top: 0.5rem;
 }
+
+.timeline-item:nth-child(odd) img  { margin-left: auto; }   /* push right, toward the line */
+.timeline-item:nth-child(even) img { margin-right: auto; }  /* keep left, toward the line */
 
 /* Short intro line above the timeline */
 .story-intro {
   max-width: 620px;
-  margin: 0 auto 2rem;
+  margin: 0 auto 2.5rem;
   font-size: 1.1rem;
 }
 
-/* Small photo montage from our travels — smaller squares, no captions */
-.trip-gallery {
-  display: flex;
-  flex-wrap: wrap;             /* wrap onto more rows on narrow screens */
-  justify-content: center;
-  gap: 0.75rem;
-  max-width: 620px;
-  margin: 0 auto 3rem;
-}
+/* ---- On phones: collapse to one column with the line on the left ---- */
+@media (max-width: 600px) {
+  .timeline::before { left: 8px; transform: none; }
 
-.trip-gallery img {
-  width: 130px;
-  height: 130px;
-  object-fit: cover;           /* square crop, no stretching */
-  border-radius: 8px;
+  .timeline-item,
+  .timeline-item:nth-child(odd),
+  .timeline-item:nth-child(even) {
+    width: 100%;
+    left: 0;
+    text-align: left;
+    padding: 0 0 2.5rem 2.5rem;   /* room for the line & dot on the left */
+  }
+
+  .timeline-item::before,
+  .timeline-item:nth-child(odd)::before,
+  .timeline-item:nth-child(even)::before {
+    left: 0;
+    right: auto;
+  }
+
+  .timeline-item img,
+  .timeline-item:nth-child(odd) img,
+  .timeline-item:nth-child(even) img {
+    margin-left: 0;
+    margin-right: 0;
+  }
 }
 
 /* ============================================================

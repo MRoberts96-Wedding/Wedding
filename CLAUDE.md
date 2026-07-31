@@ -43,5 +43,5 @@ A **wedding website** built as a **learning project** for Matthew (beginner code
 
 ## Status
 - LIVE and styled with a working countdown.
-- Sticky nav + four sections. **Our Story is done**: a `.story-intro` line, a `.trip-gallery` of smaller travel photos (no captions), then a vertical CSS timeline (`.timeline` / `.timeline-item`, oldest→newest) with real milestone photos. Images live in `images/` — **filenames are kebab-case, no spaces** (web convention). `.timeline-photo` is the leftover dashed placeholder style (unused now, kept for future stubs).
+- Sticky nav + four sections. **Our Story is done**: a `.story-intro` line, then a **centre-line timeline** (`.timeline` / `.timeline-item`) with events alternating left/right via `:nth-child(odd/even)`, oldest→newest. Milestone entries have year + text (+ photo); holiday entries (`.timeline-item--photo`) are year + photo only, no caption. Collapses to a single left-aligned column under 600px (media query at end of the timeline CSS). Images live in `images/` — **filenames are kebab-case, no spaces** (web convention).
 - **Next:** Venue, Schedule, then RSVP. RSVP will need a no-backend approach (Google Form / Formspree / mailto) since the site is static.
