@@ -43,5 +43,5 @@ A **wedding website** built as a **learning project** for Matthew (beginner code
 
 ## Status
 - LIVE and styled with a working countdown.
-- Sticky nav + four section shells (Our Story, Venue, Schedule, RSVP) are in place as placeholders.
-- **Next:** fill in the sections one at a time. RSVP will need a no-backend approach (Google Form / Formspree / mailto) since the site is static.
+- Sticky nav + four sections. **Our Story is done**: a vertical CSS timeline (`.timeline` / `.timeline-item`, oldest→newest) with dashed `.timeline-photo` placeholders awaiting real images (drop files in an `images/` folder, swap the placeholder `<div>` for `<img>`).
+- **Next:** Venue, Schedule, then RSVP. RSVP will need a no-backend approach (Google Form / Formspree / mailto) since the site is static.

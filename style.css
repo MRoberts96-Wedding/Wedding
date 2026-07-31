@@ -176,6 +176,87 @@ html { scroll-behavior: smooth; }
 }
 
 /* ============================================================
+   Our Story timeline (vertical: oldest at top → newest at bottom)
+   ============================================================ */
+.timeline {
+  list-style: none;            /* no default number bullets */
+  position: relative;          /* anchor for the vertical line */
+  max-width: 620px;
+  margin: 0 auto;
+  padding: 0;
+  text-align: left;            /* override the section's centre alignment */
+}
+
+/* The vertical line running down the left edge */
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 8px;
+  top: 6px;
+  bottom: 6px;
+  width: 2px;
+  background-color: var(--kraft);
+}
+
+.timeline-item {
+  position: relative;
+  padding: 0 0 2.5rem 2.5rem;  /* gap below + room for the line & dot */
+}
+
+.timeline-item:last-child { padding-bottom: 0; }
+
+/* The dot marking each stage on the line */
+.timeline-item::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 6px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background-color: var(--green);
+  border: 3px solid var(--cream);   /* little gap between dot and line */
+}
+
+.timeline-year {
+  display: block;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: var(--green);
+  line-height: 1;
+  margin-bottom: 0.4rem;
+}
+
+.timeline-text { margin: 0 0 1rem; }
+
+/* Dashed placeholder box, shown until you drop a real photo in */
+.timeline-photo {
+  width: 100%;
+  max-width: 320px;
+  aspect-ratio: 4 / 3;         /* keeps a tidy shape before there's an image */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px dashed var(--kraft);
+  border-radius: 8px;
+  color: var(--kraft);
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+/* When you swap the box for a real <img>, this shapes it neatly */
+.timeline-item img {
+  display: block;
+  width: 100%;
+  max-width: 320px;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;           /* fills the box without stretching */
+  border-radius: 8px;
+}
+
+/* ============================================================
    Password gate + Terms & Conditions overlay
    ============================================================ */
 

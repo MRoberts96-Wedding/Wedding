@@ -15,7 +15,7 @@
 
     <!-- Link our own stylesheet. The "?v=2" forces browsers to fetch a
          fresh copy after we make changes — bump the number when we edit CSS. -->
-    <link rel="stylesheet" href="style.css?v=5" />
+    <link rel="stylesheet" href="style.css?v=6" />
   </head>
   <body>
     <!-- ============ Password gate ============
@@ -108,7 +108,56 @@
     <section id="story" class="section">
       <div class="section-inner">
         <h2 class="section-title">Our Story</h2>
-        <p>Coming soon — how Matthew &amp; Jacqueline met.</p>
+
+        <!-- Vertical timeline: oldest at the top, most recent at the bottom.
+             TO ADD A PHOTO LATER: put the image file in an "images" folder,
+             then replace a <div class="timeline-photo">…</div> line with:
+             <img src="images/your-photo.jpg" alt="A short description"> -->
+        <ol class="timeline">
+          <li class="timeline-item">
+            <span class="timeline-year">2008</span>
+            <p class="timeline-text">
+              Matt first laid eyes on Jacqueline in the Princes Risborough Costa.
+              Sadly, she was seeing a certain Jack Dobson at the time — better
+              known to us all as the Best Man.
+            </p>
+          </li>
+
+          <li class="timeline-item">
+            <span class="timeline-year">2017</span>
+            <p class="timeline-text">
+              We met properly at a house party and started dating on 6th May.
+            </p>
+            <div class="timeline-photo">Photo coming soon</div>
+          </li>
+
+          <li class="timeline-item">
+            <span class="timeline-year">2024</span>
+            <p class="timeline-text">
+              We <em>finally</em> got engaged at Boringdon Hall on 15th September.
+            </p>
+            <div class="timeline-photo">Photo coming soon</div>
+          </li>
+
+          <li class="timeline-item">
+            <span class="timeline-year">2025</span>
+            <p class="timeline-text">
+              Our greatest adventure yet began on 14th October, when little Hugo
+              joined the team.
+            </p>
+            <div class="timeline-photo">Photo coming soon</div>
+          </li>
+
+          <li class="timeline-item">
+            <span class="timeline-year">2027</span>
+            <p class="timeline-text">
+              We officially tie the knot on 6th May — our 10-year anniversary.
+              Then on 19th May we celebrate with all of you at Hadsham Farm,
+              sharing our vows and the start of our next chapter, surrounded by
+              our favourite people.
+            </p>
+          </li>
+        </ol>
       </div>
     </section>
 
