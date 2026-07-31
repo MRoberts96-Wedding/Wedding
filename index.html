@@ -15,7 +15,7 @@
 
     <!-- Link our own stylesheet. The "?v=2" forces browsers to fetch a
          fresh copy after we make changes — bump the number when we edit CSS. -->
-    <link rel="stylesheet" href="style.css?v=16" />
+    <link rel="stylesheet" href="style.css?v=17" />
   </head>
   <body>
     <!-- ============ Password gate ============
@@ -251,48 +251,31 @@
         </p>
       </div>
 
-      <!-- Local stays as cards. Each card: name (links to their site),
-           photo, then time to the venue. -->
+      <!-- Local stays as cards. The WHOLE card is a link to the hotel site. -->
       <div class="stay-cards">
-        <div class="stay-card">
-          <h3 class="stay-name">
-            <a href="https://castleatedgehill.co.uk/" target="_blank" rel="noopener">Castle at Edgehill</a>
-          </h3>
-          <a class="stay-photo" href="https://castleatedgehill.co.uk/" target="_blank" rel="noopener">
-            <img src="images/castle-at-edgehill.jpg" alt="Castle at Edgehill" />
-          </a>
+        <a class="stay-card" href="https://castleatedgehill.co.uk/" target="_blank" rel="noopener">
+          <h3 class="stay-name">Castle at Edgehill</h3>
+          <img src="images/castle-at-edgehill.jpg" alt="Castle at Edgehill" />
           <p class="stay-time">7 mins away</p>
-        </div>
+        </a>
 
-        <div class="stay-card">
-          <h3 class="stay-name">
-            <a href="https://thewroxton.co.uk/" target="_blank" rel="noopener">Wroxton House</a>
-          </h3>
-          <a class="stay-photo" href="https://thewroxton.co.uk/" target="_blank" rel="noopener">
-            <img src="images/wroxton-hotel.jpg" alt="Wroxton House Hotel" />
-          </a>
+        <a class="stay-card" href="https://thewroxton.co.uk/" target="_blank" rel="noopener">
+          <h3 class="stay-name">Wroxton House</h3>
+          <img src="images/wroxton-hotel.jpg" alt="Wroxton House Hotel" />
           <p class="stay-time">5 mins away</p>
-        </div>
+        </a>
 
-        <div class="stay-card">
-          <h3 class="stay-name">
-            <a href="https://feldonvalley.co.uk/" target="_blank" rel="noopener">Feldon Valley Golf Club</a>
-          </h3>
-          <a class="stay-photo" href="https://feldonvalley.co.uk/" target="_blank" rel="noopener">
-            <img src="images/feldon-valley.jpeg" alt="Feldon Valley Golf Club" />
-          </a>
+        <a class="stay-card" href="https://feldonvalley.co.uk/" target="_blank" rel="noopener">
+          <h3 class="stay-name">Feldon Valley Golf Club</h3>
+          <img src="images/feldon-valley.jpeg" alt="Feldon Valley Golf Club" />
           <p class="stay-time">20 mins away</p>
-        </div>
+        </a>
 
-        <div class="stay-card">
-          <h3 class="stay-name">
-            <a href="https://www.premierinn.com/gb/en/hotels/england/oxfordshire/banbury/banbury-town-centre-castle-quay.html" target="_blank" rel="noopener">Premier Inn Banbury</a>
-          </h3>
-          <a class="stay-photo" href="https://www.premierinn.com/gb/en/hotels/england/oxfordshire/banbury/banbury-town-centre-castle-quay.html" target="_blank" rel="noopener">
-            <img src="images/premier-inn.jpg" alt="Premier Inn Banbury" />
-          </a>
+        <a class="stay-card" href="https://www.premierinn.com/gb/en/hotels/england/oxfordshire/banbury/banbury-town-centre-castle-quay.html" target="_blank" rel="noopener">
+          <h3 class="stay-name">Premier Inn Banbury</h3>
+          <img src="images/premier-inn.jpg" alt="Premier Inn Banbury" />
           <p class="stay-time">15 mins away</p>
-        </div>
+        </a>
       </div>
     </section>
 
