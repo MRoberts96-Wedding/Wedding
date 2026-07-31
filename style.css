@@ -256,6 +256,30 @@ html { scroll-behavior: smooth; }
   border-radius: 8px;
 }
 
+/* Short intro line above the timeline */
+.story-intro {
+  max-width: 620px;
+  margin: 0 auto 2rem;
+  font-size: 1.1rem;
+}
+
+/* Small photo montage from our travels — smaller squares, no captions */
+.trip-gallery {
+  display: flex;
+  flex-wrap: wrap;             /* wrap onto more rows on narrow screens */
+  justify-content: center;
+  gap: 0.75rem;
+  max-width: 620px;
+  margin: 0 auto 3rem;
+}
+
+.trip-gallery img {
+  width: 130px;
+  height: 130px;
+  object-fit: cover;           /* square crop, no stretching */
+  border-radius: 8px;
+}
+
 /* ============================================================
    Password gate + Terms & Conditions overlay
    ============================================================ */
