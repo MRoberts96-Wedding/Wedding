@@ -120,3 +120,101 @@ body {
   .only-desktop { display: none; }    /* hide desktop-only things */
   .only-mobile  { display: revert; }  /* show mobile-only things (back to normal) */
 }
+
+/* ============================================================
+   Password gate + Terms & Conditions overlay
+   ============================================================ */
+
+/* Make the "hidden" attribute always win — even over display:flex below.
+   Without this, an element with class="gate" hidden would still show. */
+[hidden] { display: none !important; }
+
+/* Both overlays fill the whole screen and sit ON TOP of the page */
+.gate,
+.terms {
+  position: fixed;
+  inset: 0;                    /* top/right/bottom/left = 0, i.e. fill screen */
+  display: flex;
+  align-items: center;         /* centre the card up/down */
+  justify-content: center;     /* centre the card left/right */
+  padding: 2rem;
+  background-color: var(--cream);
+  z-index: 10;                 /* stack above the wedding page */
+}
+
+/* The Terms overlay stacks above the gate when both are open */
+.terms { z-index: 20; }
+
+/* The card in the middle of each overlay */
+.gate-card,
+.terms-card {
+  width: 100%;
+  max-width: 360px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.gate-card h2,
+.terms-card h2 {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-weight: 600;
+  color: var(--green);
+  font-size: 2rem;
+  margin: 0 0 0.5rem;
+}
+
+.gate-sub {
+  color: var(--kraft);
+  margin: 0 0 1.5rem;
+}
+
+/* The password box */
+.gate-input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  border: 1px solid var(--kraft);
+  border-radius: 6px;
+  background-color: #fff;
+  margin-bottom: 1rem;
+}
+
+/* The "I agree to the T&Cs" row */
+.gate-terms {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.95rem;
+  margin-bottom: 1.5rem;
+}
+
+.gate-terms a { color: var(--green); }
+
+/* The green Enter / Back button (shared by both overlays) */
+.gate-button {
+  padding: 0.75rem 2rem;
+  font-size: 1rem;
+  color: var(--cream);
+  background-color: var(--green);
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  letter-spacing: 1px;
+}
+
+.gate-button:hover { background-color: #263c2f; }
+
+/* Red error text under the button */
+.gate-error {
+  color: #a33;
+  min-height: 1.2rem;          /* reserve space so the layout doesn't jump */
+  margin: 1rem 0 0;
+  font-size: 0.9rem;
+}
+
+.terms-card p {
+  font-size: 1.1rem;
+  margin: 0 0 2rem;
+}

@@ -25,7 +25,7 @@ A **wedding website** built as a **learning project** for Matthew (beginner code
 ## Files
 - `index.html` — homepage. `<main class="hero">` centered block: `<h1>` names, `.tagline`, `.divider`, `.details`, plus the countdown markup.
 - `style.css` — palette in `:root` CSS variables; flexbox-centered `.hero`; Cormorant Garamond (Google Fonts) for headings, system sans for body.
-- `script.js` — countdown to the wedding date, updates every second.
+- `script.js` — (1) password gate + Terms overlay logic, (2) countdown to the wedding date, updates every second. **Password is set at the top of this file** in `const PASSWORD` — NOT real security (client-side only, visible in View Source); it's just a casual "guests only" gate.
 - `CNAME` — custom domain (do not remove).
 - `README.md`, `hello.txt` (leftover test file, safe to delete).
 
@@ -37,7 +37,8 @@ A **wedding website** built as a **learning project** for Matthew (beginner code
 - Couple: **Matthew & Jacqueline**. Big day: **Wed 19 May 2027**, Hadsham Farm, Banbury.
 
 ## Conventions
-- **Cache-busting**: `index.html` links assets with a version query — currently `style.css?v=2` and `script.js?v=1`. **Bump the number whenever that file is edited** so browsers fetch fresh copies.
+- **Cache-busting**: `index.html` links assets with a version query — currently `style.css?v=3` and `script.js?v=3`. **Bump the number whenever that file is edited** so browsers fetch fresh copies.
+- **Full-screen overlays**: the password gate (`.gate`) and Terms (`.terms`) use `position: fixed; inset: 0` + `z-index`. A `[hidden] { display: none !important; }` rule makes the HTML `hidden` attribute reliably win over `display: flex` — that's how JS shows/hides them (`el.hidden = true/false`).
 - **Responsive helpers** (in style.css): `class="only-desktop"` shows on computers only; `class="only-mobile"` shows on phones only. Breakpoint is `max-width: 600px`; mobile rule uses `display: revert`. Reuse these instead of one-off show/hide classes.
 
 ## Status
