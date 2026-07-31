@@ -122,6 +122,60 @@ body {
 }
 
 /* ============================================================
+   Top menu bar (navigation)
+   ============================================================ */
+
+/* Smoothly glide down the page when a menu link is clicked */
+html { scroll-behavior: smooth; }
+
+.site-nav {
+  position: sticky;            /* stays pinned to the top as you scroll */
+  top: 0;
+  z-index: 5;                  /* above the page, below the login gate (10) */
+  display: flex;
+  flex-wrap: wrap;             /* links wrap onto a new line on small phones */
+  justify-content: center;
+  gap: 1.5rem;
+  padding: 1rem;
+  background-color: var(--green);
+}
+
+.site-nav a {
+  color: var(--cream);
+  text-decoration: none;
+  font-size: 0.85rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.site-nav a:hover { color: var(--kraft); }
+
+/* ============================================================
+   Content sections (Our Story, Venue, Schedule, RSVP)
+   ============================================================ */
+.section {
+  padding: 4rem 2rem;
+  scroll-margin-top: 60px;     /* stop the sticky bar covering the heading */
+}
+
+/* Every other section gets a white background for gentle separation */
+.section--alt { background-color: #fff; }
+
+.section-inner {
+  max-width: 700px;
+  margin: 0 auto;              /* centre the text column */
+  text-align: center;
+}
+
+.section-title {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-weight: 600;
+  color: var(--green);
+  font-size: clamp(2rem, 6vw, 3rem);
+  margin: 0 0 1.5rem;
+}
+
+/* ============================================================
    Password gate + Terms & Conditions overlay
    ============================================================ */
 
@@ -214,7 +268,14 @@ body {
   font-size: 0.9rem;
 }
 
-.terms-card p {
-  font-size: 1.1rem;
+/* The numbered list of joke terms — left-aligned so the "1." reads
+   like a real terms document, not a lone centred sentence */
+.terms-list {
+  width: 100%;
+  text-align: left;
   margin: 0 0 2rem;
+  padding-left: 1.5rem;      /* room for the numbers */
+  font-size: 1.1rem;
 }
+
+.terms-list li { margin-bottom: 0.75rem; }

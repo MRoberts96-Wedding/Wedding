@@ -23,7 +23,7 @@ A **wedding website** built as a **learning project** for Matthew (beginner code
 - Windows: CRLF/LF warnings on commit are harmless.
 
 ## Files
-- `index.html` — homepage. `<main class="hero">` centered block: `<h1>` names, `.tagline`, `.divider`, `.details`, plus the countdown markup.
+- `index.html` — single scrolling page. Sticky `<nav class="site-nav">` menu (anchor links) → `<main class="hero" id="home">` (names, `.tagline`, `.divider`, `.details`, countdown), then four `<section class="section">` shells: `#story`, `#venue`, `#schedule`, `#rsvp` (alternating `.section--alt` white bg). Sections are placeholder stubs, being filled one at a time.
 - `style.css` — palette in `:root` CSS variables; flexbox-centered `.hero`; Cormorant Garamond (Google Fonts) for headings, system sans for body.
 - `script.js` — (1) password gate + Terms overlay logic, (2) countdown to the wedding date, updates every second. **Password is set at the top of this file** in `const PASSWORD` — NOT real security (client-side only, visible in View Source); it's just a casual "guests only" gate.
 - `CNAME` — custom domain (do not remove).
@@ -43,4 +43,5 @@ A **wedding website** built as a **learning project** for Matthew (beginner code
 
 ## Status
 - LIVE and styled with a working countdown.
-- **Next:** add sections/tabs — Our Story, Venue & Directions, Schedule, RSVP (planned for the next day).
+- Sticky nav + four section shells (Our Story, Venue, Schedule, RSVP) are in place as placeholders.
+- **Next:** fill in the sections one at a time. RSVP will need a no-backend approach (Google Form / Formspree / mailto) since the site is static.

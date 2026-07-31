@@ -15,7 +15,7 @@
 
     <!-- Link our own stylesheet. The "?v=2" forces browsers to fetch a
          fresh copy after we make changes — bump the number when we edit CSS. -->
-    <link rel="stylesheet" href="style.css?v=3" />
+    <link rel="stylesheet" href="style.css?v=5" />
   </head>
   <body>
     <!-- ============ Password gate ============
@@ -54,12 +54,25 @@
     <div class="terms" id="terms" hidden>
       <div class="terms-card">
         <h2>Terms &amp; Conditions</h2>
-        <p>You agree to not fall asleep during the speeches at the Wedding.</p>
+        <ol class="terms-list">
+          <li>You agree to not fall asleep during the speeches at the Wedding.</li>
+        </ol>
         <button type="button" class="gate-button" id="terms-close">Back</button>
       </div>
     </div>
 
-    <main class="hero">
+    <!-- ============ Top menu bar ============
+         Sticky bar that stays at the top. Each link jumps down to a
+         section below (the href "#story" matches id="story"). -->
+    <nav class="site-nav">
+      <a href="#home">Home</a>
+      <a href="#story">Our Story</a>
+      <a href="#venue">Venue</a>
+      <a href="#schedule">Schedule</a>
+      <a href="#rsvp">RSVP</a>
+    </nav>
+
+    <main class="hero" id="home">
       <h1>Matthew &amp; Jacqueline</h1>
       <p class="tagline">We're getting married</p>
       <hr class="divider" />
@@ -90,6 +103,38 @@
         </div>
       </div>
     </main>
+
+    <!-- ============ Our Story ============ -->
+    <section id="story" class="section">
+      <div class="section-inner">
+        <h2 class="section-title">Our Story</h2>
+        <p>Coming soon — how Matthew &amp; Jacqueline met.</p>
+      </div>
+    </section>
+
+    <!-- ============ Venue & Directions ============ -->
+    <section id="venue" class="section section--alt">
+      <div class="section-inner">
+        <h2 class="section-title">Venue &amp; Directions</h2>
+        <p>Coming soon — Hadsham Farm, with a map and directions.</p>
+      </div>
+    </section>
+
+    <!-- ============ Schedule ============ -->
+    <section id="schedule" class="section">
+      <div class="section-inner">
+        <h2 class="section-title">Schedule</h2>
+        <p>Coming soon — the running order for the day.</p>
+      </div>
+    </section>
+
+    <!-- ============ RSVP ============ -->
+    <section id="rsvp" class="section section--alt">
+      <div class="section-inner">
+        <h2 class="section-title">RSVP</h2>
+        <p>Coming soon — let us know if you can make it.</p>
+      </div>
+    </section>
 
     <!-- Load the countdown logic. Like the stylesheet, "?v=1" forces a fresh
          copy after we change it — bump the number whenever we edit script.js. -->
