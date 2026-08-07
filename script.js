@@ -103,3 +103,61 @@ function updateCountdown() {
 
 updateCountdown();              // run once immediately...
 setInterval(updateCountdown, 1000);  // ...then again every second
+
+/* ============================================================
+   Highlight the current section in the top menu while scrolling
+   ------------------------------------------------------------
+   As you scroll, we work out which section you're looking at and
+   add the "active" class to its menu link (removing it from the
+   others). This means clicking "Venue" then scrolling to
+   Accommodation won't leave "Venue" stuck on — the menu follows you.
+   ============================================================ */
+const navLinks = Array.from(document.querySelectorAll(".site-nav a"));
+
+/* the section each link points to (href="#venue" -> the #venue element) */
+const navSections = navLinks
+  .map(function (link) { return document.querySelector(link.getAttribute("href")); })
+  .filter(Boolean);
+
+function setActiveLink(id) {
+  navLinks.forEach(function (link) {
+    link.classList.toggle("active", link.getAttribute("href") === "#" + id);
+  });
+}
+
+let spyScheduled = false;
+
+function updateActiveLink() {
+  spyScheduled = false;
+
+  const nav = document.querySelector(".site-nav");
+  const navHeight = nav ? nav.offsetHeight : 0;
+  const scrollPos = window.scrollY + navHeight + 5;
+
+  /* current section = the last one whose top has scrolled up under the menu */
+  let currentId = navSections.length ? navSections[0].id : null;
+  navSections.forEach(function (section) {
+    if (section.offsetTop <= scrollPos) currentId = section.id;
+  });
+
+  /* if we've scrolled right to the bottom, force the final section active */
+  const atBottom =
+    window.innerHeight + window.scrollY >=
+    document.documentElement.scrollHeight - 2;
+  if (atBottom && navSections.length) {
+    currentId = navSections[navSections.length - 1].id;
+  }
+
+  if (currentId) setActiveLink(currentId);
+}
+
+/* run on scroll, throttled with requestAnimationFrame so it stays smooth */
+window.addEventListener("scroll", function () {
+  if (!spyScheduled) {
+    spyScheduled = true;
+    window.requestAnimationFrame(updateActiveLink);
+  }
+});
+
+/* set the right one on first load too */
+updateActiveLink();

@@ -146,9 +146,17 @@ html { scroll-behavior: smooth; }
   font-size: 0.85rem;
   letter-spacing: 2px;
   text-transform: uppercase;
+  border-bottom: 2px solid transparent;   /* reserve space so .active doesn't nudge the layout */
+  padding-bottom: 2px;
 }
 
 .site-nav a:hover { color: var(--kraft); }
+
+/* The section you're currently scrolled to is highlighted (class added by script.js) */
+.site-nav a.active {
+  color: var(--kraft);
+  border-bottom-color: var(--kraft);
+}
 
 /* ============================================================
    Content sections (Our Story, Venue, Schedule, RSVP)
