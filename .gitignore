@@ -141,3 +141,6 @@ dist
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
 .vite/
+
+# Local-only form asset (Google Form header image — not used by the website)
+images/RSVP-Header.png
