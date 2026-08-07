@@ -448,6 +448,43 @@ html { scroll-behavior: smooth; }
 #venue .section-inner { position: relative; z-index: 1; }
 
 /* ============================================================
+   Schedule — running order for the day
+   ============================================================ */
+.schedule {
+  list-style: none;            /* no default number bullets */
+  max-width: 420px;
+  margin: 2rem auto 0;
+  padding: 0;
+}
+
+.schedule-item {
+  padding: 1rem 0;
+}
+
+/* faint kraft divider between entries (not after the last one) */
+.schedule-item:not(:last-child) {
+  border-bottom: 1px solid rgba(193, 154, 107, 0.35);
+}
+
+.schedule-time {
+  display: block;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: var(--green);
+  line-height: 1.1;
+}
+
+.schedule-event {
+  display: block;
+  margin-top: 0.25rem;
+  font-size: 0.85rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--kraft);
+}
+
+/* ============================================================
    Password gate + Terms & Conditions overlay
    ============================================================ */
 
