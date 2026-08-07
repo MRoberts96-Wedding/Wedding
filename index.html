@@ -15,7 +15,7 @@
 
     <!-- Link our own stylesheet. The "?v=2" forces browsers to fetch a
          fresh copy after we make changes — bump the number when we edit CSS. -->
-    <link rel="stylesheet" href="style.css?v=18" />
+    <link rel="stylesheet" href="style.css?v=19" />
   </head>
   <body>
     <!-- ============ Password gate ============
@@ -330,7 +330,15 @@
     <section id="rsvp" class="section section--alt">
       <div class="section-inner">
         <h2 class="section-title">RSVP</h2>
-        <p>Coming soon — let us know if you can make it.</p>
+        <p class="rsvp-intro">
+          We'd love to celebrate with you! Let us know if you can make it.
+        </p>
+        <p class="rsvp-deadline">Please reply by 31st March 2027</p>
+        <p>
+          <!-- TODO: replace href="#" with the Google Form link, and add
+               target="_blank" rel="noopener" so it opens in a new tab -->
+          <a class="rsvp-button" href="#">RSVP</a>
+        </p>
       </div>
     </section>
 
