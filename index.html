@@ -21,7 +21,7 @@
     <!-- ============ Password gate ============
          This covers the whole screen on load. The real page sits
          behind it and is only revealed once the password is correct
-         AND the Terms box is ticked (see script.js). -->
+         (see script.js). -->
     <div class="gate" id="gate">
       <form class="gate-card" id="gate-form">
         <h2>Guests Only</h2>
@@ -35,30 +35,11 @@
           autocomplete="off"
         />
 
-        <!-- The joke Terms tick-box. The link opens the Terms overlay. -->
-        <label class="gate-terms">
-          <input type="checkbox" id="gate-agree" />
-          <span>I agree to the <a href="#" id="terms-link">Terms &amp; Conditions</a></span>
-        </label>
-
         <button type="submit" class="gate-button">Enter</button>
 
         <!-- Error messages appear here -->
         <p class="gate-error" id="gate-error"></p>
       </form>
-    </div>
-
-    <!-- ============ Terms &amp; Conditions overlay ============
-         Hidden by default. The "Back" button closes it and returns
-         the guest to the password screen. -->
-    <div class="terms" id="terms" hidden>
-      <div class="terms-card">
-        <h2>Terms &amp; Conditions</h2>
-        <ol class="terms-list">
-          <li>You agree to not fall asleep during the speeches at the Wedding.</li>
-        </ol>
-        <button type="button" class="gate-button" id="terms-close">Back</button>
-      </div>
     </div>
 
     <!-- ============ Top menu bar ============
@@ -344,6 +325,6 @@
 
     <!-- Load the countdown logic. Like the stylesheet, "?v=1" forces a fresh
          copy after we change it — bump the number whenever we edit script.js. -->
-    <script src="script.js?v=5"></script>
+    <script src="script.js?v=6"></script>
   </body>
 </html>
