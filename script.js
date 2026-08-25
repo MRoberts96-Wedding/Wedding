@@ -8,8 +8,11 @@
    private behind it.
    ============================================================ */
 
-/* 👇 CHANGE THIS to whatever password you print on the invitations */
-const PASSWORD = "190527";
+/* 👇 CHANGE THESE to whatever passwords you print on the invitations.
+   Day guests get the full site; evening guests get a shorter version
+   (evening schedule only, no RSVP). */
+const PASSWORD = "190527";           // day guests — full site
+const EVENING_PASSWORD = "Welcome";  // evening guests — evening mode
 
 /* Grab the pieces we need from the page */
 const gate = document.getElementById("gate");
@@ -31,8 +34,16 @@ gateForm.addEventListener("submit", function (event) {
     return;
   }
 
-  /* Then the password must match */
-  if (gatePassword.value !== PASSWORD) {
+  /* Check the password. The day password shows the full site; the
+     evening password switches the page into "evening mode" (styled in
+     style.css). We trim spaces and ignore capitals so guests aren't
+     caught out by "Welcome" vs "welcome". */
+  const entered = gatePassword.value.trim().toLowerCase();
+  if (entered === PASSWORD.toLowerCase()) {
+    document.body.classList.remove("evening");   // full day site
+  } else if (entered === EVENING_PASSWORD.toLowerCase()) {
+    document.body.classList.add("evening");      // shorter evening site
+  } else {
     gateError.textContent = "Sorry, that password isn't right.";
     return;
   }
@@ -130,13 +141,20 @@ let spyScheduled = false;
 function updateActiveLink() {
   spyScheduled = false;
 
+  /* only consider visible sections — RSVP is hidden for evening guests,
+     and a hidden element reports offsetParent === null */
+  const visible = navSections.filter(function (section) {
+    return section.offsetParent !== null;
+  });
+  if (!visible.length) return;
+
   const nav = document.querySelector(".site-nav");
   const navHeight = nav ? nav.offsetHeight : 0;
   const scrollPos = window.scrollY + navHeight + 5;
 
   /* current section = the last one whose top has scrolled up under the menu */
-  let currentId = navSections.length ? navSections[0].id : null;
-  navSections.forEach(function (section) {
+  let currentId = visible[0].id;
+  visible.forEach(function (section) {
     if (section.offsetTop <= scrollPos) currentId = section.id;
   });
 
@@ -144,11 +162,11 @@ function updateActiveLink() {
   const atBottom =
     window.innerHeight + window.scrollY >=
     document.documentElement.scrollHeight - 2;
-  if (atBottom && navSections.length) {
-    currentId = navSections[navSections.length - 1].id;
+  if (atBottom) {
+    currentId = visible[visible.length - 1].id;
   }
 
-  if (currentId) setActiveLink(currentId);
+  setActiveLink(currentId);
 }
 
 /* run on scroll, throttled with requestAnimationFrame so it stays smooth */

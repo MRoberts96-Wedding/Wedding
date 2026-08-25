@@ -530,6 +530,29 @@ html { scroll-behavior: smooth; }
 }
 
 /* ============================================================
+   Evening guests (body.evening) — a shorter version of the site.
+   script.js adds the "evening" class to <body> when the evening
+   password is used. These rules add a welcome line and hide the
+   day-only schedule items + the whole RSVP section/link.
+   ============================================================ */
+
+/* extra welcome line under the tagline — hidden for day guests */
+.evening-line {
+  display: none;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-style: italic;
+  font-size: 1.3rem;
+  color: var(--kraft);
+  margin: 0 0 1.5rem;
+}
+body.evening .evening-line { display: block; }
+
+/* hide the day-only parts when in evening mode */
+body.evening .schedule-item--day { display: none; }
+body.evening #rsvp { display: none; }
+body.evening .site-nav a[href="#rsvp"] { display: none; }
+
+/* ============================================================
    Password gate + Terms & Conditions overlay
    ============================================================ */
 

@@ -15,7 +15,7 @@
 
     <!-- Link our own stylesheet. The "?v=2" forces browsers to fetch a
          fresh copy after we make changes — bump the number when we edit CSS. -->
-    <link rel="stylesheet" href="style.css?v=20" />
+    <link rel="stylesheet" href="style.css?v=21" />
   </head>
   <body>
     <!-- ============ Password gate ============
@@ -76,6 +76,8 @@
     <main class="hero" id="home">
       <h1>Matthew &amp; Jacqueline</h1>
       <p class="tagline">We're getting married</p>
+      <!-- Extra line shown only to evening guests (body.evening) -->
+      <p class="evening-line">Join us for an evening of celebration</p>
       <hr class="divider" />
       <p class="details">
         <!-- Shown on larger screens (laptops/desktops) -->
@@ -286,23 +288,23 @@
         <p>Here's roughly how the day will unfold — final timings to follow.</p>
 
         <ol class="schedule">
-          <li class="schedule-item">
+          <li class="schedule-item schedule-item--day">
             <span class="schedule-time">1:00 pm</span>
             <span class="schedule-event">Guests Arrive</span>
           </li>
-          <li class="schedule-item">
+          <li class="schedule-item schedule-item--day">
             <span class="schedule-time">1:30 pm</span>
             <span class="schedule-event">Ceremony</span>
           </li>
-          <li class="schedule-item">
+          <li class="schedule-item schedule-item--day">
             <span class="schedule-time">2:00 pm</span>
             <span class="schedule-event">Drinks Reception &amp; Photos</span>
           </li>
-          <li class="schedule-item">
+          <li class="schedule-item schedule-item--day">
             <span class="schedule-time">4:00 pm</span>
             <span class="schedule-event">Wedding Breakfast</span>
           </li>
-          <li class="schedule-item">
+          <li class="schedule-item schedule-item--day">
             <span class="schedule-time">5:30 pm</span>
             <span class="schedule-event">Speeches</span>
           </li>
@@ -342,6 +344,6 @@
 
     <!-- Load the countdown logic. Like the stylesheet, "?v=1" forces a fresh
          copy after we change it — bump the number whenever we edit script.js. -->
-    <script src="script.js?v=4"></script>
+    <script src="script.js?v=5"></script>
   </body>
 </html>
