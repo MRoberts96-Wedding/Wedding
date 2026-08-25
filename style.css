@@ -184,6 +184,13 @@ html { scroll-behavior: smooth; }
 }
 
 /* ============================================================
+   Our Story is currently HIDDEN (kept in the HTML so it can be
+   switched back on later). To bring it back, delete these two lines.
+   ============================================================ */
+#story { display: none; }
+.site-nav a[href="#story"] { display: none; }
+
+/* ============================================================
    Our Story timeline — centre line, events alternating left/right
    (oldest at top → most recent at bottom)
    ============================================================ */
