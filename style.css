@@ -560,6 +560,29 @@ body.evening #rsvp { display: none; }
 body.evening .site-nav a[href="#rsvp"] { display: none; }
 
 /* ============================================================
+   Gifts section
+   ============================================================ */
+.gifts-text {
+  max-width: 620px;
+  margin: 0 auto 1.75rem;
+  font-size: 1.1rem;
+}
+
+/* Little card that will hold the honeymoon-fund details */
+.gifts-fund {
+  max-width: 420px;
+  margin: 0 auto;
+  padding: 1.25rem 1.5rem;
+  background-color: #fff;
+  border: 1px solid var(--kraft);
+  border-radius: 10px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+  color: var(--green);
+}
+
+.gifts-fund p { margin: 0.25rem 0; }
+
+/* ============================================================
    Password gate + Terms & Conditions overlay
    ============================================================ */
 
