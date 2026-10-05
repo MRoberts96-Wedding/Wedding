@@ -144,3 +144,8 @@ vite.config.ts.timestamp-*
 
 # Local-only form asset (Google Form header image — not used by the website)
 images/RSVP-Header.png
+
+# Original seating-planner source + instructions (the live, gated copy is
+# seating.html at the repo root). Kept local, not committed, to avoid a
+# duplicate planner that could drift out of sync.
+Seating Plan/

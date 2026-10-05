@@ -11,8 +11,9 @@
 /* 👇 CHANGE THESE to whatever passwords you print on the invitations.
    Day guests get the full site; evening guests get a shorter version
    (evening schedule only, no RSVP). */
-const PASSWORD = "190527";           // day guests — full site
-const EVENING_PASSWORD = "Welcome";  // evening guests — evening mode
+const PASSWORD = "190527";                // day guests — full site
+const EVENING_PASSWORD = "Welcome";       // evening guests — evening mode
+const SEATING_PASSWORD = "Seating Plan";  // opens the seating planner (seating.html)
 
 /* Grab the pieces we need from the page */
 const gate = document.getElementById("gate");
@@ -33,6 +34,12 @@ gateForm.addEventListener("submit", function (event) {
     document.body.classList.remove("evening");   // full day site
   } else if (entered === EVENING_PASSWORD.toLowerCase()) {
     document.body.classList.add("evening");      // shorter evening site
+  } else if (entered === SEATING_PASSWORD.toLowerCase()) {
+    /* the seating planner is its own page — unlock it for this browsing
+       session and go there */
+    try { sessionStorage.setItem("seatingUnlocked", "1"); } catch (e) {}
+    window.location.href = "seating.html";
+    return;
   } else {
     gateError.textContent = "Sorry, that password isn't right.";
     return;
