@@ -591,6 +591,40 @@ body.evening .site-nav a[href="#rsvp"] { display: none; }
 
 .gifts-fund p { margin: 0.25rem 0; }
 
+.gifts-fund .gifts-fund-title {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 1.3rem;
+  margin: 0 0 0.75rem;
+}
+
+.gifts-fund-details { margin: 0; }
+.gifts-fund-details > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid rgba(193, 154, 107, 0.3);  /* faint kraft line */
+}
+.gifts-fund-details > div:last-child { border-bottom: 0; }
+.gifts-fund-details dt {
+  color: var(--kraft);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 0.75rem;
+}
+.gifts-fund-details dd {
+  margin: 0;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;   /* tidy, evenly-spaced numbers */
+}
+
+.gifts-fund .gifts-fund-note {
+  font-size: 0.9rem;
+  color: var(--ink);
+  margin: 0.75rem 0 0;
+}
+
 /* ============================================================
    Password gate + Terms & Conditions overlay
    ============================================================ */
