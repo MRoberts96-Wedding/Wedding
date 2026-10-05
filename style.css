@@ -560,6 +560,15 @@ body.evening #rsvp { display: none; }
 body.evening .site-nav a[href="#rsvp"] { display: none; }
 
 /* ============================================================
+   Dress Code section
+   ============================================================ */
+.dress-text {
+  max-width: 620px;
+  margin: 0 auto 1.25rem;
+  font-size: 1.1rem;
+}
+
+/* ============================================================
    Gifts section
    ============================================================ */
 .gifts-text {
