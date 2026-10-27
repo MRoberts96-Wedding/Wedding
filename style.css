@@ -150,7 +150,13 @@ html { scroll-behavior: smooth; }
   padding-bottom: 2px;
 }
 
-.site-nav a:hover { color: var(--kraft); }
+/* Only colour on hover for devices with a real pointer (mouse). On touch
+   screens :hover "sticks" to the last-tapped link, which left a tapped menu
+   item gold even after scrolling on — the current section is handled
+   separately by .active (the scrollspy). */
+@media (hover: hover) {
+  .site-nav a:hover { color: var(--kraft); }
+}
 
 /* The section you're currently scrolled to is highlighted (class added by script.js) */
 .site-nav a.active {
