@@ -40,6 +40,11 @@
         <!-- Error messages appear here -->
         <p class="gate-error" id="gate-error"></p>
       </form>
+
+      <!-- Cheeky screen shown only if someone guesses the obvious "Password" -->
+      <div class="gate-card gate-reject" id="gate-reject" hidden>
+        <h2>Sorry you didn't make the guest list x</h2>
+      </div>
     </div>
 
     <!-- ============ Top menu bar ============
@@ -377,6 +382,6 @@
 
     <!-- Load the countdown logic. Like the stylesheet, "?v=1" forces a fresh
          copy after we change it — bump the number whenever we edit script.js. -->
-    <script src="script.js?v=7"></script>
+    <script src="script.js?v=8"></script>
   </body>
 </html>

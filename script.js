@@ -14,12 +14,14 @@
 const PASSWORD = "190527";                // day guests — full site
 const EVENING_PASSWORD = "Welcome";       // evening guests — evening mode
 const SEATING_PASSWORD = "Seating Plan";  // opens the seating planner (seating.html)
+const DECOY_PASSWORD = "Password";        // cheeky "not on the guest list" gotcha
 
 /* Grab the pieces we need from the page */
 const gate = document.getElementById("gate");
 const gateForm = document.getElementById("gate-form");
 const gatePassword = document.getElementById("gate-password");
 const gateError = document.getElementById("gate-error");
+const gateReject = document.getElementById("gate-reject");
 
 /* When the guest presses Enter (submits the form) */
 gateForm.addEventListener("submit", function (event) {
@@ -39,6 +41,12 @@ gateForm.addEventListener("submit", function (event) {
        session and go there */
     try { sessionStorage.setItem("seatingUnlocked", "1"); } catch (e) {}
     window.location.href = "seating.html";
+    return;
+  } else if (entered === DECOY_PASSWORD.toLowerCase()) {
+    /* someone guessed the obvious "Password" — show the cheeky screen
+       instead of the site */
+    gateForm.hidden = true;
+    gateReject.hidden = false;
     return;
   } else {
     gateError.textContent = "Sorry, that password isn't right.";
